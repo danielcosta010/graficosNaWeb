@@ -9,48 +9,7 @@
     <script type="text/javascript">
 
       // Load Charts and the corechart package.
-      google.charts.load('current', {'packages':['corechart']});
-
-      // Draw the pie chart for Sarah's pizza when Charts is loaded.
-      google.charts.setOnLoadCallback(drawPieChart);
-
-
-      // Callback that draws the pie chart for Sarah's pizza.
-      function drawPieChart() {
-
-        // Create the data table for Sarah's pizza.
-        var data = new google.visualization.DataTable();
-        data.addColumn('string', 'Topping');
-        data.addColumn('number', 'Slices');
-        data.addRows([
-          ['Educação', 2000],
-          ['Transporte', 500],
-          ['Lazer', 230],
-          ['Saúde', 50],
-          ['Cartão de Credito', 900],
-          ['Alimentação', 260]
-        ]);
-
-        // Set options for Sarah's pie chart.
-        var options = { title:'Tipos de gastos',
-                        width: 1000,
-                        height: 500,
-                        is3D: true,
-                        legend: 'labeled',
-                        pieSliceText: 'value',
-                        slices: {
-                          1:{color: 'grey'},
-                          2:{color: '#a6a6a6'},
-                          3:{color: 'grey'},
-                          4:{offset: .4},
-                          5:{color: 'grey'}
-                        }
-                      };
-
-        // Instantiate and draw the chart for Sarah's pizza.
-        var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
-        chart.draw(data, options);
-      }
+      google.charts.load('current', {'packages':['corechart'], 'language': 'pt'});
 
     </script>
   
@@ -61,7 +20,8 @@
 
 <body>
     <!--Div that will hold the pie chart-->
-    <div id="chart_div"></div>
+    <div id="chart_pie"></div>
+    <div id="chart_line"></div>
   
 </body>
 </html>
