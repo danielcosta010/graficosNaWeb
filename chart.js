@@ -9,14 +9,15 @@
    var data = new google.visualization.DataTable();
    data.addColumn('string', 'Topping');
    data.addColumn('number', 'Slices');
-   data.addRows([
-     ['Educação', 2000],
-     ['Transporte', 500],
-     ['Lazer', 230],
-     ['Saúde', 50],
-     ['Cartão de Credito', 900],
-     ['Alimentação', 260]
-   ]);
+   data.addRows(
+    [
+      ['Educação', 2000],
+      ['Transporte', 500],
+      ['Lazer', 230],
+      ['Saúde', 50],
+      ['Cartão de Credito', 900],
+      ['Alimentação', 260]
+    ]);
 
    // Set options for pie chart.
    var options = { 
@@ -96,14 +97,49 @@
     ]);
 
   var options = {
-    chart: {
-      title: 'Controle de gastos pessoais',
-      subtitle: 'Entradas, Saídas, ano: 2022',
-      format: 'currency'
+    
+    title: 'Controle de gastos pessoais',
+    subtitle: 'Entradas, Saídas, ano: 2022',
+    width: 800,
+    height: 500,
+    vAxis: {
+      format: 'currency',
+      gridlines: {color: 'transparent'},
+      title: 'Valores'
     }
   };
 
-  var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
+  var chart = new google.visualization.ColumnChart(document.getElementById('columnchart_material'));
+  chart.draw(data, options);
 
-  chart.draw(data, google.charts.Bar.convertOptions(options));
+
+  var data = new google.visualization.DataTable();
+    data.addColumn('string', 'Categorias');
+    data.addColumn('number', 'Valores');
+    data.addColumn({type: "number", role: 'annotation'});
+    data.addColumn({type: "string", role: 'style'});
+
+    data.addRows([
+      
+      ['Educação', 2000, 2000, 'blue'],
+      ['Transporte', 500, 500, 'grey'],
+      ['Lazer', 230, 230, 'grey'],
+      ['Saúde', 50, 50, 'grey'],
+      ['Cartão de Credito', 900, 900, 'purple'],
+      ['Alimentação', 260, 260, 'grey']
+    ]);
+
+    var options = {
+      title: 'Tipos de Gastos',
+      height: 400,
+      width: 800,
+      vAxis: { 
+        gridlines: {count:0}, textPosition: 'none'
+      },
+      legend: 'none'
+  }
+
+    var chart = new google.visualization.ColumnChart(document.getElementById('chart_column'));
+    chart.draw(data, options);
+
 }
