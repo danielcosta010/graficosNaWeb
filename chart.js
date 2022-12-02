@@ -76,4 +76,34 @@
 
    var chart = new google.visualization.LineChart(document.getElementById('chart_line'));
    chart.draw(data, options);
- }
+
+
+   var data = google.visualization.arrayToDataTable(
+    [
+      ['Mês', 'Entrada', 'Saída'],
+      ['Jan', 2500, 1000],
+      ['Fev', 2000, 500],
+      ['Mar', 3000, 1300],
+      ['Abr', 1500, 1700],
+      ['Mai', 5000, 2250],
+      ['Jun', 5000, 3000],
+      ['Jul', 3567, 1468],
+      ['Ago', 3452, 5250],
+      ['Set', 1833, 5500],
+      ['Out', 3803, 1000],
+      ['Nov', 3569, 1500],
+      ['Dez', 300, 1740]
+    ]);
+
+  var options = {
+    chart: {
+      title: 'Controle de gastos pessoais',
+      subtitle: 'Entradas, Saídas, ano: 2022',
+      format: 'currency'
+    }
+  };
+
+  var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
+
+  chart.draw(data, google.charts.Bar.convertOptions(options));
+}
