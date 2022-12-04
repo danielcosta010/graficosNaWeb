@@ -114,7 +114,15 @@ function drawChart() {
   chart.draw(data, options);
 
 
+  // var dadosJson = $.ajax({
+  //   url: 'https://gist.githubusercontent.com/danielcosta010/d0a4cab4592dcdb1903edb951669ebe6/raw/70f948c35052a23addb7cb5143e0b265ec9e84d6/dados.json',
+  //   mimeType: 'application-json',
+  //   type: 'json',
+  //   async: false
+  // }).responseText;
+
   var data = new google.visualization.DataTable();
+
   data.addColumn('string', 'Categorias');
   data.addColumn('number', 'Valores');
   data.addColumn({ type: "string", role: 'annotation' });
@@ -130,15 +138,18 @@ function drawChart() {
     ['Alimentação', 260, 'R$260,00', 'grey']
   ]);
 
-  data.sort([{ column: 1, desc: true }])
+  data.sort([{ column: 1, desc: true }]);
+
+  // var convertion = data.toJSON();
+  // console.log(convertion);
 
   var options = {
     title: 'Tipos de Gastos',
     height: 400,
     width: 800,
     vAxis: {
-      gridlines: { count: 0 }, textPosition: 'none'
-    },
+            gridlines: { count: 0 }, textPosition: 'none'
+          },
     hAxis: {
       gridlines: {
         count: 0
@@ -146,11 +157,48 @@ function drawChart() {
       textPosition: 'none'
 
     },
-    annotations: { alwaysOutside: true },
+    annotations: { 
+                  alwaysOutside: true 
+                },
     legend: 'none'
   }
 
   var chart = new google.visualization.BarChart(document.getElementById('chart_column'));
   chart.draw(data, options);
+
+
+  // chart bar whith json
+
+  var dataJson = $.ajax({
+    url: 'https://gist.githubusercontent.com/danielcosta010/e385c3dd8cfdab510900f01016a59d96/raw/def2f9f00f7bc2873d5403b4e66256d2bc64d19d/data.json',
+    //mimeType: 'application-json',
+    dataType: 'json',
+    async: false,
+    }).responseText;
+  
+  var data = new google.visualization.DataTable(dataJson);
+
+  data.sort([{ column: 1, desc: true }]);
+
+  var options = {
+    title: 'Usuarios e poupanças',
+    height: 400,
+    width: 800,
+    legend: 'none',
+    hAxis: {
+            gridlines: {
+                        color: 'transparent'
+                      },
+            textPosition: 'none'
+          },
+
+    annotations: { 
+      alwaysOutside: true 
+    },
+  }
+
+  var chart = new google.visualization.BarChart(document.getElementById('chart_bar-json'));
+
+  chart.draw(data, options)
 
 }

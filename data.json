@@ -1,30 +1,101 @@
 {
   "cols": [
     {
-      "id":"",
       "label":"Nome",
-      "pattern":"",
       "type":"string"
     },
 
     {
-      "id":"",
       "label":"Valor",
-      "pattern":"",
       "type":"number"
+    },
+
+    {
+      "type": "string", 
+      "role": "annotation"
     }
   ],
   "rows": [
+    {
+      "c":[
+            {"v":"João Antonio Marques","f":null},
+            {"v":25.110,"f":null},
+            {"v":"R$25.110","f":null}
+          ]
+    },
+
+    {
+      "c":[
+            {"v":"Ana Siqueira","f":null},
+            {"v":10.120,"f":null},
+            {"v":"R$10.120","f":null}
+          ]
+    },
+
+    {
+      "c":[
+            {"v":"Alcides V. Oliveira","f":null},
+            {"v":30.240,"f":null},
+            {"v":"R$30.240","f":null}
+          ]
+    },
+
+    {
+      "c":[
+            {"v":"Rafael Antunes","f":null},
+            {"v":2.310,"f":null},
+            {"v":"R$2.310","f":null}
+          ]
+    },
+
+    {
+      "c":[
+            {"v":"Bianca M. Sampaio","f":null},
+            {"v":8.54,"f":null},
+            {"v":"R$8.54","f":null}
+          ]
+    },
+
+    {
+      "c":[
+            {"v":"Vitor Barbosa","f":null},
+            {"v":6.521,"f":null},
+            {"v":"R$6.521","f":null}
+          ]
+    },
+
+    {
+      "c":[
+            {"v":"Maria Do Carmo Prado","f":null},
+            {"v":12.327,"f":null},
+            {"v":"R$12.327","f":null}
+          ]
+    },
+
+    
+    {
+      "c":[
+            {"v":"Naria Heloisa de Alemida","f":null},
+            {"v":9.524,"f":null},
+            {"v":"R$9.524","f":null}
+          ]
+    },
+
+    {
+      "c":[
+            {"v":"Tita de Cássia Cuaron","f":null},
+            {"v":20.174,"f":null},
+            {"v":"R$20.174","f":null}
+          ]
+    }
 
   ]
 }
 
-João Antonio Marques 25.110
-Ana Siqueira 10.120
-Alcides V. Oliveira 30.240
-Rafael Antunes 2.310
-Bianca M. Sampaio 8.542
-Vitor Barbosa 6.521
-Maria Do Carmo Prado 12.327
-Naria Heloisa de Alemida 9.524
-Tita de Cássia Cuaron 20.174
+
+
+
+
+
+
+ 
